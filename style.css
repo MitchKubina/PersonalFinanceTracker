@@ -18,7 +18,7 @@
 
 .addexpense {
     width: 100px;
-    height: 75px;
+    height: 75gpx;
     border-radius: 50px;
     border-width: 1px;
     background-color: rgb(64, 128, 106);
@@ -51,4 +51,9 @@
 #chart {
     width: 300px;
     height: 300px;
+}
+
+#megabottom {
+    display: flex;
+    justify-content: center;
 }
