@@ -7,47 +7,71 @@
     <title>Personal Finance Tracker</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
-    <div id="top">
-        <div id="side1">
-            <button class="btn" onclick="addExpense()">Add Expense</button>
-        </div>
-        <div id="side2">
-            <canvas id="myChart"></canvas>
-        </div>
-    </div>
-    <div id="bottom">
-        <p></p>
-    </div>
-
-    <div id="pop-up">
-        <h3>Add Expense</h3>
-        <form id="expense">
-            <div class="label">
-                <label for="name">Name: </label>
-                <input id="name" type="text">
-            </div>
-            <div class="label">
-                <label for="type">Type: </label>
-                <select name="type" id="type">
-                    <option value="travel">Travel</option>
-                    <option value="school">School</option>
-                    <option value="leisure">Leisure</option>
-                </select>
-            </div>
-            <div class="label">
-                <label for="cost">Cost: </label>
-                <input type="number" min="1" step="any">
-            </div>
-
-            <input type="submit">
+    <div id="top" style="display: flex">
+        <button class="addexpense" data-bs-toggle="modal" data-bs-target="#modalform">Add Expense</button>
+        <form id="revenue">
+            <label for="num">Add Revenue:</label>
+            <input id="num" type="number">
+            <button type="submit" class="addexpense">Add Revenue</btn>
         </form>
     </div>
+    <div id="bottom">
+        <canvas class="chart" id="myChart"></canvas>
+        <canvas class="chart" id="secondChart"></canvas>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalform" tabindex="-1" role="dialog" aria-labelledby="expenseForm" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="expense">
+                    <div class="modal-body text-center">
+                        <div class="label">
+                            <label for="name">Name: </label>
+                            <input id="name" type="text">
+                        </div>
+                        <div class="label">
+                            <label for="type">Type: </label>
+                            <select name="type" id="type">
+                                <option value="travel">Travel</option>
+                                <option value="school">School</option>
+                                <option value="groceries">Groceries</option>
+                                <option value="leisure">Leisure</option>
+                                <option value="utilities">Utilities</option>
+                                <option value="rent">Rent</option>
+                            </select>
+                        </div>
+                        <div class="label">
+                            <label for="cost">Cost: </label>
+                            <input id="cost" type="number" min="1" step="any">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Add Expense</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 <footer>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
+        integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </footer>
 
 </html>
